@@ -74,8 +74,8 @@ class BuildCommand(build):
                 cmake_arg_list.append("-DPYTHON_INCLUDE_DIR={}".format(python_include_dir))
                 cmake_arg_list.append("-DNUMPY_INCLUDES={}".format(numpy_include_dir))
 
-            if python_version[0] == "3":
-                cmake_arg_list.append("-DBUILD_PYTHON3=ON")
+            # if python_version[0] == "3":
+                # cmake_arg_list.append("-DBUILD_PYTHON3=ON")
 
             subprocess.check_call(['rm', '-f', 'CMakeCache.txt'])
             subprocess.check_call(['cmake'] + cmake_arg_list)
